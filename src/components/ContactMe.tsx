@@ -1,8 +1,8 @@
-export default function About (){
+export default function ContactMe(){
     return(
-        <section id="about" className="bg-[#091E2B] h-180 z-0 flex justify-center items-center">
+        <section id="contactme" className="bg-[#091E2B] h-180 z-0 flex justify-center items-center">
             <div className="text-center flex flex-col justify-center items-center px-16">
-                <h1 className="text-white text-4xl font-poppins font-semibold text-right">ABOUT</h1>
+                <h1 className="text-white text-4xl font-poppins font-semibold text-right">Contact Me</h1>
                 <p className="text-white font-openSans">I’m a software engineer that has the capability of building several digital solutions from web dev to machine learning while also keeping my collaborations skill intact by joining several organization and volunteering activities.</p>
             </div>
             <div></div>

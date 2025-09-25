@@ -12,20 +12,24 @@ export default function Nav (){
                 </Link>
                 <div className="flex flex-row items-center gap-4">
                     <div className="flex space-x-8 items-center">
-                        <Link href="#about" className="group text-black transition-colors duration-500 font-openSans">
+                        <Link href="#hero" className="group text-black transition-colors duration-500 font-openSans">
                             Home
                             <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
                         </Link>
                         <Link href="#about" className="group text-black transition-colors duration-500 font-openSans">
-                            About
+                            About Me
                             <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
                         </Link>
-                        <Link href="#about" className="group text-black transition-colors duration-500 font-openSans">
+                        <Link href="#certifications" className="group text-black transition-colors duration-500 font-openSans">
                             Certifications
                             <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
                         </Link>
-                        <Link href="#about" className="group text-black transition-colors duration-500 font-openSans">
+                        <Link href="#projects" className="group text-black transition-colors duration-500 font-openSans">
                             Projects
+                            <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
+                        </Link>
+                        <Link href="#contactme" className="group text-black transition-colors duration-500 font-openSans">
+                            Contact Me
                             <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
                         </Link>
                     </div>

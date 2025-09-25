@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-baseline text-white overflow-hidden">
+    <section id="hero" className="relative h-screen flex items-baseline text-white overflow-hidden">
       {/* Container untuk Background Images */}
       <div className="absolute inset-0 z-0">
         <img src="/sun.svg" className="absolute right-56 top-5 w-[450px]" alt="Sun"></img>
