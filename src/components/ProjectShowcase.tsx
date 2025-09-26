@@ -1,12 +1,19 @@
+// Declaring that this component is for client side
 'use client';
 
-// import Swiper JS
+// import Swiper and SwiperSlide JS for Content Swiping
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+//Import Image to make advanced, optimized img container
 import Image from 'next/image';
+
 // import Swiper styles
 import 'swiper/css';
+//Package for pagination
 import 'swiper/css/pagination';
+//Package for navigation
 import 'swiper/css/navigation';
+//Package for setting the side slides
 import 'swiper/css/effect-coverflow';
 
 import { Pagination, Navigation, Scrollbar, EffectCoverflow } from 'swiper/modules'
@@ -15,15 +22,16 @@ export default function ProjectShowcase() {
     return (
         <div className="w-full py-8">
             <Swiper
-                centeredSlides={true}
-                effect="coverflow"
-                spaceBetween={30}
+                centeredSlides={true} // Active slide will be positioned in center
+                effect="coverflow" // Swiper effect to imitate album cover
+                spaceBetween={30} // Spacing between swiper content
                 slidesPerView="auto" // Changed to auto for better panorama effect
-                navigation={true}
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
+                navigation={true} // Activating navigation buttons
+                pagination={{ clickable: true }} // Activating paginations (The one with dots)
+                scrollbar={{ draggable: true }} // Enabling gesture of dragging to switch between contents
                 className="w-[90%] max-w-6xl"
-                loop={true}
+                loop={true} // Making the contents repeat
+                
                 // Add coverflow effect parameters for panorama look
                 coverflowEffect={{
                     rotate: 15,        // Angle of rotation

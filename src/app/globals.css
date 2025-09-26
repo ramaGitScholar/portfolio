@@ -34,6 +34,30 @@
   }
 }
 
+.swiper-slide-active {
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, aqua, deeppink, violet) 1;
+  border-image-slice: 1;
+  transition: border-image 2s ease, box-shadow 2s ease;
+}
+
+.swiper-slide-active:hover {
+  box-shadow: 0 0 15px aqua, 0 0 25px deeppink, 0 0 35px violet;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px aqua, 0 0 20px deeppink;
+  }
+  50% {
+    box-shadow: 0 0 20px deeppink, 0 0 40px violet;
+  }
+}
+
+.swiper-slide-active:hover {
+  animation: neonPulse 2s infinite alternate;
+}
+
 
 /* body {
   background: var(--background);
