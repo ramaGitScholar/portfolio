@@ -4,6 +4,11 @@
 // Importing link for optimized link
 import Link from "next/link";
 import React from "react";
+import { SiGithub } from "react-icons/si";
+import { SiInstagram } from "react-icons/si";
+import { SiLinkedin } from "react-icons/si";
+
+
 
 // useState to store dynamic variable, useEffect to handle action based on values change
 import { useRef, useState, useEffect } from "react";
@@ -86,10 +91,10 @@ export default function Nav (){
                                 <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
                             </Link>
                         </div>
-                        <div className="flex flex-row justify-between items-center gap-1 border-black rounded-4xl p-2 border-2">
-                                <Link href="https://github.com/ramaGitScholar"><img className="scale-60 hover:scale-100 transition-all" src="/github-icon.svg" alt="" /></Link>
-                                <Link href="https://www.instagram.com/ramandha_putras/"><img className="scale-60 hover:scale-100 transition-all" src="/instagram-icon.svg" alt="" /></Link>
-                                <Link href="https://www.linkedin.com/in/ramandhaps/"><img className="scale-60 hover:scale-100 transition-all" src="/linkedin-icon.svg" alt="" /></Link>
+                        <div className="flex flex-row justify-between items-center gap-5 border-black rounded-4xl p-2 border-2">
+                                <Link href="https://github.com/ramaGitScholar"><SiGithub className="scale-125 hover:scale-150 transition-all"/></Link>
+                                <Link href="https://www.instagram.com/ramandha_putras/"><SiInstagram className="scale-125 hover:scale-150 transition-all"/></Link>
+                                <Link href="https://www.linkedin.com/in/ramandhaps/"><SiLinkedin className="scale-125 hover:scale-150 transition-all"/></Link>
                         </div>
                     </div>
                 </div>

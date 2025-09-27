@@ -1,4 +1,5 @@
-import Image from "next/image";
+'use client';
+import {TypeAnimation} from 'react-type-animation';
 
 export default function Hero() {
   return (
@@ -10,24 +11,26 @@ export default function Hero() {
       </div>
 
       {/* Konten Utama */}
-      <div className="z-10 flex flex-row justify-between w-full px-16 mt-16 items-end">
+      <div className="z-10 flex flex-row justify-between w-full px-16 mt-16 items-center">
         {/* Gambar Profil */}
-        <div className="relative border-white w-[350px] h-[350px] rounded-xl border-t-2 border-r-2 border-l-12 border-b-12">
-        <Image
-            className="absolute bottom-0 inset-x-0 w-full"
-            src="/profile-picture.png"
-            width={300}
-            height={300}
-            alt="Profile Picture"
-        ></Image>
-        </div>
+        <img src="/profile-picture.svg" alt="profile picture" />
 
         {/* Teks Deskripsi */}
         <div className="text-black h-full flex flex-col gap-16">
           <h1 className="text-4xl font-poppins font-semibold text-right mr-4">RAMANDHA PUTRA S</h1>
+          
           <div className="border-r-2 border-black pr-4 flex flex-col gap-3">
-            <h2 className="text-xl font-openSans font-semibold text-right">Software Engineer</h2>
-            <p className="font-openSans text-right">With Great Power Comes Great Skibidi Sigma</p>
+            <TypeAnimation
+        sequence={[
+          `Hello I'm Ramandha Putra Suryahadi`, 2000,
+          'A Software Engineer', 2000,
+          'With great power comes great skibidi sigma', 2000
+        ]}
+        wrapper='h1'
+        speed={25}
+        style={{ fontFamily: `var(--font-poppins)`, fontSize: '1.25rem', color: 'black'}}
+        repeat={Infinity}
+        />
           </div>
         </div>
       </div>

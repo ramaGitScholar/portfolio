@@ -9,22 +9,22 @@ export default function ContactMe(){
                 <div className="max-w-lg mx-auto p-6 shadow-lg rounded-lg">
                     <form action="#" method="POST">
                         <div className="mb-4">
-                        <label htmlFor="fullName" className="block text-sm font-medium text-white">Nama Lengkap</label>
+                        <label htmlFor="fullName" className="block text-sm font-medium text-white">Full Name</label>
                         <input type="text" id="fullName" name="fullName" className="text-white mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required/>
                         </div>
                         
                         <div className="mb-4">
-                        <label htmlFor="email" className="block text-sm font-medium text-white">Alamat Email</label>
+                        <label htmlFor="email" className="block text-sm font-medium text-white">Email Address</label>
                         <input type="email" id="email" name="email" className="text-white mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required/>
                         </div>
                         
                         <div className="mb-4">
-                        <label htmlFor="subject" className="block text-sm font-medium text-white">Subjek</label>
+                        <label htmlFor="subject" className="block text-sm font-medium text-white">Subject</label>
                         <input type="text" id="subject" name="subject" className="text-white mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required/>
                         </div>
                         
                         <div className="mb-4">
-                        <label htmlFor="message" className="block text-sm font-medium text-white">Pesan</label>
+                        <label htmlFor="message" className="block text-sm font-medium text-white">Leave a Message</label>
                         <textarea id="message" name="message" className="text-white mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
                         </div>
                         
