@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${openSans.variable} antialiased bg-[#BFBFBF]`}
+        className={`${poppins.variable} ${openSans.variable} antialiased`}
       >
         <Nav/>
         {children}

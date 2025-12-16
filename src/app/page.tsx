@@ -6,7 +6,7 @@ import ContactMe from "@/components/ContactMe";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-[#13001E]">
       <Hero></Hero>
       <About></About>
       <Certifications></Certifications>

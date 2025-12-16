@@ -1,9 +1,9 @@
 export default function ContactMe(){
     return(
-        <section id="contactme" className="bg-gradient-to-b from-[#091E2B] to-[#1E5E86] flex flex-col h-180 z-0 justify-center items-center">
+        <section id="contactme" className="flex flex-col h-180 z-0 justify-center items-center">
             <div className="text-center flex flex-col justify-center items-center px-16 h-1/5 gap-2">
                 <h1 className="text-white text-4xl font-poppins font-semibold text-center">Contact Me</h1>
-                <p className="text-white font-openSans">Let's Create Fabulous Things Together!</p>
+                <p className="text-white font-openSans">Let us Create Fabulous Things Together!</p>
             </div>
             <div className="h-4/5 my-5 w-full">
                 <div className="max-w-lg mx-auto p-6 shadow-lg rounded-lg">
