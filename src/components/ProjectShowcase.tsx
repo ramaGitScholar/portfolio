@@ -17,12 +17,12 @@ export default function ProjectShowcase() {
     
     // Array deskripsi untuk setiap proyek
     const projectDescriptions = [
-        {id: 1, link: "https://github.com/ramaGitScholar/laravel-sineflix", alt: "slide1", image_path: "/projects/project1.jpg", desc: "SineFlix - Website Rekomendasi Film"},
-        {id: 2, link: "https://github.com/ramaGitScholar/airline-ticket-reservation", alt: "slide2", image_path: "/projects/project2.jpg", desc: "Airline Ticket Reservation - Web untuk memesan tiket pesawat secara daring"},
-        {id: 3, link: "#projects", alt: "slide3", image_path: "/projects/project3.jpg", desc: "Color Detection - Identifikasi objek yang memiliki warna tertentu"},
-        {id: 4, link: "https://github.com/ramaGitScholar/qolbuapp", alt: "slide4", image_path: "/projects/project4.jpg", desc: "Qolbu App - Platform manajemen data untuk yayasann Qolbu Hasanah"},
-        {id: 5, link: "https://github.com/ramaGitScholar/backend_digimon", alt: "slide5", image_path: "/projects/project5.jpg", desc: "Tegalmanggung website - Profil Desa Tegalmanggung berbentuk website"},
-        {id: 6, link: "https://github.com/ramaGitScholar", alt: "slide6", image_path: "/projects/findoutmore.jpg", desc: "Cek selengkapnya pada github!"}
+        {id: 1, link: "https://github.com/ramaGitScholar/laravel-sineflix", alt: "slide1", image_path: "/projects/project1.jpg", desc: "SineFlix - Movie recommendation website"},
+        {id: 2, link: "https://github.com/ramaGitScholar/airline-ticket-reservation", alt: "slide2", image_path: "/projects/project2.jpg", desc: "Airline Ticket Reservation"},
+        {id: 3, link: "#projects", alt: "slide3", image_path: "/projects/project3.jpg", desc: "Color Detection With OpenCV"},
+        {id: 4, link: "https://github.com/ramaGitScholar/qolbuapp", alt: "slide4", image_path: "/projects/project4.jpg", desc: "Qolbu App - Data management platform for Qolbu Hasanah Foundation"},
+        {id: 5, link: "https://github.com/ramaGitScholar/backend_digimon", alt: "slide5", image_path: "/projects/project5.jpg", desc: "Tegalmanggung Website – A village profile website showcasing the unique features of Tegalmanggung Village, from its natural waterfall to its prosperous livestock."},
+        {id: 6, link: "https://github.com/ramaGitScholar", alt: "slide6", image_path: "/projects/findoutmore.jpg", desc: "Check out more from my Github!"}
     ];
 
     return (

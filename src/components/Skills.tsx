@@ -20,7 +20,7 @@ interface SkillsProps {
   to?: number;
 }
 
-export default function Skills({from, to}: SkillProps) {
+export default function Skills({from, to}: SkillsProps) {
   const visibleStack = stacks.slice(from, to)
   return (
     <div className="overflow-hidden w-full py-7 flex justify-between items-center absolute">

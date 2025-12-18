@@ -24,10 +24,7 @@ export default function About (){
                 </h1>
 
                 <p className="text-white text-sm md:text-md font-openSans border-[#472C57] border-2 rounded-xl p-14 mt-6">
-                    I’m a software engineer that has the capability of building several digital
-                    solutions from web dev to machine learning while also keeping my
-                    collaborations skill intact by joining several organization and volunteering
-                    activities.
+                    I am a software engineer with the ability to build a wide range of digital solutions, from web development to machine learning, while maintaining strong collaboration skills through involvement in various organizations and volunteer activities.
                 </p>
 
                 <a href="#about2" className="self-center mt-16 w-12 hover:w-14 transition-all">

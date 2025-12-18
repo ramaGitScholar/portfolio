@@ -12,7 +12,7 @@ export default function About2 (){
             </div>
             <div className="flex justify-center items-center text-center z-30 my-8">
                 <p className="text-white text-sm md:text-md font-openSans bg-black/30 backdrop-blur-md border-[#472C57] border-2 rounded-xl p-14 m-10 lg:mx-60">
-                    I have hands-on experience in fullstack web development, focusing on creating interactive UI/UX and building reliable backend systems. Currently, I am expanding my technical expertise by developing proficiency in Go and Vue.js to stay current with modern technology stacks.
+                    I have hands-on experience in full-stack web development, delivering interactive UI/UX and reliable backend systems across personal, team, and professional projects, and I am currently expanding my expertise in AI, especially computer vision.
                 </p>
             </div>
             <div className="h-1/5 flex justify-center items-end">

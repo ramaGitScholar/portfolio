@@ -11,19 +11,19 @@ const cards = [
   { id: 5, title: "React Basics", type: "web", path: 'reactbasic.jpg'},
   { id: 6, title: "Mobile Development and JavaScript", type: "web", path: 'mobiledev.jpg'},
   { id: 7, title: "Introduction to Mobile Development", type: "web", path: 'mobiledev2.jpg'},
-  { id: 8, title: "Memulai Pemrograman dengan Python", type: "ml", path: 'pythonintro.jpg'},
-  { id: 9, title: "Belajar Dasar AI", type: "ml", path: 'aifund.jpg'},
-  { id: 10, title: "Practical Machine Learning", type: "ml", path: 'practicalml.jpg'},
-  { id: 11, title: "Introduction to Machine Learning", type: "ml", path: 'mlintro.jpg'},
-  { id: 12, title: "Scikit-Learn For Machine Learning Classification Problems", type: "ml", path: 'scikitlearn.jpg'},
-  { id: 13, title: "Artificial Intelligence Essentials V2", type: "ml", path: 'aiessentials.jpg'},
-  { id: 14, title: "Machine Learning with Python (V2)", type: "ml", path: 'mlwpython.jpg'},
-  { id: 15, title: "Python Project for Data Science", type: "ml", path: 'pythonds.jpg'},
-  { id: 16, title: "Python Project for Data Engineering", type: "ml", path: 'pythonde.jpg'},
-  { id: 17, title: "Foundations for Big Data Analysis with SQL", type: "ml", path: 'bigdatafound.jpg'},
-  { id: 18, title: "A Crash Course in Data Science", type: "ml", path: 'ds.jpg'},
-  { id: 19, title: "The Data Scientist’s Toolbox", type: "ml", path: 'dstoolbox.jpg'},
-  { id: 20, title: "Data Science in Real Life", type: "ml", path: 'dsrl.jpg'},
+  { id: 8, title: "Memulai Pemrograman dengan Python", type: "machine learning", path: 'pythonintro.jpg'},
+  { id: 9, title: "Belajar Dasar AI", type: "machine learning", path: 'aifund.jpg'},
+  { id: 10, title: "Practical Machine Learning", type: "machine learning", path: 'practicalml.jpg'},
+  { id: 11, title: "Introduction to Machine Learning", type: "machine learning", path: 'mlintro.jpg'},
+  { id: 12, title: "Scikit-Learn For Machine Learning Classification Problems", type: "machine learning", path: 'scikitlearn.jpg'},
+  { id: 13, title: "Artificial Intelligence Essentials V2", type: "machine learning", path: 'aiessentials.jpg'},
+  { id: 14, title: "Machine Learning with Python (V2)", type: "machine learning", path: 'mlwpython.jpg'},
+  { id: 15, title: "Python Project for Data Science", type: "machine learning", path: 'pythonds.jpg'},
+  { id: 16, title: "Python Project for Data Engineering", type: "machine learning", path: 'pythonde.jpg'},
+  { id: 17, title: "Foundations for Big Data Analysis with SQL", type: "machine learning", path: 'bigdatafound.jpg'},
+  { id: 18, title: "A Crash Course in Data Science", type: "machine learning", path: 'ds.jpg'},
+  { id: 19, title: "The Data Scientist’s Toolbox", type: "machine learning", path: 'dstoolbox.jpg'},
+  { id: 20, title: "Data Science in Real Life", type: "machine learning", path: 'dsrl.jpg'},
 ];
 
 export default function Certifications(){
@@ -36,7 +36,7 @@ export default function Certifications(){
             <div className="text-center flex flex-col justify-center items-center px-16 gap-5">
                 <h1 className="text-white text-4xl font-poppins font-semibold text-right">CERTIFICATIONS</h1>
                 <div className="text-white flex flex-row gap-17 mt-7">
-                    {["all", "web", "ml"].map(type => (
+                    {["all", "web", "machine learning"].map(type => (
                         <button key={type} onClick={() => setSelectedtype(type)} className={`rounded-lg transition p-3 ${selectedtype === type ? 
                             "bg-white text-black" : "bg-white/10 backdrop-blur-md"
                         }`}>
