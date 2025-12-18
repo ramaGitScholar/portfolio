@@ -1,46 +1,55 @@
-// Declaring that this component is for client side
 'use client';
 
-// import Swiper and SwiperSlide JS for Content Swiping
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-//Import Image to make advanced, optimized img container
 import Image from 'next/image';
+import { useState } from 'react'; // Import useState
 
-// import Swiper styles
 import 'swiper/css';
-//Package for pagination
 import 'swiper/css/pagination';
-//Package for navigation
 import 'swiper/css/navigation';
-//Package for setting the side slides
 import 'swiper/css/effect-coverflow';
 
 import { Pagination, Navigation, Scrollbar, EffectCoverflow } from 'swiper/modules'
 
 export default function ProjectShowcase() {
+    // State untuk tracking slide aktif
+    const [activeIndex, setActiveIndex] = useState(0);
+    
+    // Array deskripsi untuk setiap proyek
+    const projectDescriptions = [
+        {id: 1, link: "https://github.com/ramaGitScholar/laravel-sineflix", alt: "slide1", image_path: "/projects/project1.jpg", desc: "SineFlix - Website Rekomendasi Film"},
+        {id: 2, link: "https://github.com/ramaGitScholar/airline-ticket-reservation", alt: "slide2", image_path: "/projects/project2.jpg", desc: "Airline Ticket Reservation - Web untuk memesan tiket pesawat secara daring"},
+        {id: 3, link: "#projects", alt: "slide3", image_path: "/projects/project3.jpg", desc: "Color Detection - Identifikasi objek yang memiliki warna tertentu"},
+        {id: 4, link: "https://github.com/ramaGitScholar/qolbuapp", alt: "slide4", image_path: "/projects/project4.jpg", desc: "Qolbu App - Platform manajemen data untuk yayasann Qolbu Hasanah"},
+        {id: 5, link: "https://github.com/ramaGitScholar/backend_digimon", alt: "slide5", image_path: "/projects/project5.jpg", desc: "Tegalmanggung website - Profil Desa Tegalmanggung berbentuk website"},
+        {id: 6, link: "https://github.com/ramaGitScholar", alt: "slide6", image_path: "/projects/findoutmore.jpg", desc: "Cek selengkapnya pada github!"}
+    ];
+
     return (
         <div className="w-full py-8">
             <Swiper
-                centeredSlides={true} // Active slide will be positioned in center
-                effect="coverflow" // Swiper effect to imitate album cover
-                spaceBetween={30} // Spacing between swiper content
-                slidesPerView="auto" // Changed to auto for better panorama effect
-                navigation={true} // Activating navigation buttons
-                pagination={{ clickable: true }} // Activating paginations (The one with dots)
-                scrollbar={{ draggable: true }} // Enabling gesture of dragging to switch between contents
+                centeredSlides={true}
+                effect="coverflow"
+                spaceBetween={30}
+                slidesPerView="auto"
+                navigation={true}
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
                 className="w-[90%] max-w-6xl"
-                loop={true} // Making the contents do not repeat
+                loop={true}
                 
-                // Add coverflow effect parameters for panorama look
-                coverflowEffect={{
-                    rotate: 15,        // Angle of rotation
-                    stretch: 0,        // Stretch space between slides
-                    depth: 200,        // Depth offset in px
-                    modifier: 1,       // Effect multiplier
-                    slideShadows: true, // Enable slide shadows
+                // Event handler untuk update deskripsi saat slide berubah
+                onSlideChange={(swiper) => {
+                    setActiveIndex(swiper.realIndex); // realIndex untuk handle loop
                 }}
-                // Responsive breakpoints
+                
+                coverflowEffect={{
+                    rotate: 15,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: true,
+                }}
                 breakpoints={{
                     320: {
                         slidesPerView: 'auto',
@@ -59,87 +68,30 @@ export default function ProjectShowcase() {
                         spaceBetween: 0,
                     },
                 }}
-                modules={[Pagination, Navigation, Scrollbar, EffectCoverflow]} // Added EffectCoverflow
+                modules={[Pagination, Navigation, Scrollbar, EffectCoverflow]}
             >
-                <SwiperSlide className="!w-auto">
-                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
-                        <a href="">
-                            <Image 
-                                alt="slide 1" 
-                                src="/projects/project1.jpg" 
-                                width={600} 
-                                height={300}
-                                className="object-cover w-full h-full"
-                            />
-                        </a>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className="!w-auto">
-                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
-                        <a href="">
-                            <Image 
-                                alt="slide 2" 
-                                src="/projects/project2.jpg" 
-                                width={600} 
-                                height={300}
-                                className="object-cover w-full h-full"
-                            />
-                        </a>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className="!w-auto">
-                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
-                        <a href="https://google.com">
-                            <Image 
-                                alt="slide 3" 
-                                src="/projects/project3.jpg" 
-                                width={600} 
-                                height={300}
-                                className="object-cover w-full h-full"
-                            />
-                        </a>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className="!w-auto">
-                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
-                        <a href="">
-                            <Image 
-                                alt="slide 4" 
-                                src="/projects/project4.jpg" 
-                                width={600} 
-                                height={300}
-                                className="object-cover w-full h-full"
-                            />
-                        </a>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className="!w-auto">
-                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
-                        <a href="">
-                            <Image 
-                                alt="slide 5" 
-                                src="/projects/project5.jpg" 
-                                width={600} 
-                                height={300}
-                                className="object-cover w-full h-full"
-                            />
-                        </a>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className="!w-auto">
-                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
-                        <a href="https://github.com/ramaGitScholar?tab=repositories">
-                            <Image 
-                                alt="slide 5" 
-                                src="/projects/findoutmore.jpg" 
-                                width={600} 
-                                height={300}
-                                className="object-cover w-full h-full"
-                            />
-                        </a>
-                    </div>
-                </SwiperSlide>
+                {projectDescriptions.map(project => (
+                    <SwiperSlide key={project.id} className="!w-auto">
+                        <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
+                            <a href={project.link}>
+                                <Image 
+                                    alt="slide 1" 
+                                    src={project.image_path} 
+                                    width={600} 
+                                    height={300}
+                                    className="object-cover w-full h-full"
+                                />
+                            </a>
+                        </div>
+                    </SwiperSlide>
+                ))}
+                
             </Swiper>
+            
+            {/* Teks yang berubah sesuai slide aktif */}
+            <p className='text-white text-center font-openSans mt-7'>
+                {projectDescriptions[activeIndex].desc}
+            </p>
         </div>
     )
 }
