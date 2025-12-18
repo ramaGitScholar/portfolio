@@ -6,8 +6,8 @@ export default function Hero() {
     <section id="hero" className="flex flex-row text-white justify-center items-center pt-7">
       {/* Konten Utama */}
       <div className='w-8/10 bg-[#1B0926] my-18 py-18 rounded-lg text-center border-[#472C57] border-2 flex flex-col justify-center items-center'>
-        <p className='font-openSans'>Software Engineer</p>
-        <h1 className='font-poppins mt-6 text-4xl mb-16 font-bold'>Ramandha Putra <br /> Suryahadi</h1>
+        <p className='font-openSans md:text-md'>Software Engineer</p>
+        <h1 className='font-poppins mt-6 md:text-4xl mb-16 font-bold'>Ramandha Putra <br /> Suryahadi</h1>
         <hr className='w-5/10' />
         <a href="" className='flex justify-center'>
           <p className='font-openSans bg-gradient-to-r from-[#F12D78] to-[#8927FB] p-4 rounded-2xl mt-16 w-12/12'>Get Started</p>
