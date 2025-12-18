@@ -1,6 +1,6 @@
 "use client";
 import { FaReact, FaNodeJs, FaPython, FaLaravel,  } from "react-icons/fa";
-import { SiTypescript, SiMysql, SiTailwindcss, SiScikitlearn, SiTensorflow } from "react-icons/si";
+import { SiTypescript, SiMysql, SiTailwindcss, SiScikitlearn, SiTensorflow, SiOpencv } from "react-icons/si";
 
 const stacks = [
   { icon: <FaReact size={30} color="#61DBFB" />, name: "React" },
@@ -12,14 +12,21 @@ const stacks = [
   { icon: <SiTailwindcss size={30} color="#00618A" />, name: "Tailwind" },
   { icon: <SiScikitlearn size={30} color="#f05330 " />, name: "Scikit Learn" },
   { icon: <SiTensorflow size={30} color="#00618A" />, name: "TensorFlow" },
+  { icon: <SiOpencv size={30} color="#161614" />, name: "OpenCV" },
 ];
 
-export default function Skills() {
+interface SkillsProps {
+  from?: number;
+  to?: number;
+}
+
+export default function Skills({from, to}: SkillProps) {
+  const visibleStack = stacks.slice(from, to)
   return (
     <div className="overflow-hidden w-full py-7 flex justify-between items-center absolute">
       {/* Isi yang bergerak */}
       <div className="flex gap-32 animate-scroll">
-        {[...stacks, ...stacks].map((stack, i) => (
+        {[...visibleStack, ...visibleStack].map((stack, i) => (
           <div
             key={i}
             className="flex items-center justify-center w-20 h-20 scale-125 rounded-full shadow-lg hover:scale-150 transition-all duration-75"

@@ -78,12 +78,12 @@ export default function Nav (){
                                 About
                                 <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
                             </Link>
-                            <Link href="#certifications" className="group text-white transition-colors duration-500 font-openSans">
-                                Certifications
-                                <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
-                            </Link>
                             <Link href="#projects" className="group text-white transition-colors duration-500 font-openSans">
                                 Projects
+                                <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
+                            </Link>
+                            <Link href="#certifications" className="group text-white transition-colors duration-500 font-openSans">
+                                Certifications
                                 <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
                             </Link>
                             <Link href="#contactme" className="group text-white transition-colors duration-500 font-openSans">

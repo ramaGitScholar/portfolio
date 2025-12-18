@@ -1,40 +1,50 @@
+"use client"
+
+import { TypeAnimation } from "react-type-animation"
+import Link from "next/link"
+import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si"
+
 export default function ContactMe(){
     return(
-        <section id="contactme" className="flex flex-col h-180 z-0 justify-center items-center">
-            <div className="text-center flex flex-col justify-center items-center px-16 h-1/5 gap-2">
-                <h1 className="text-white text-4xl font-poppins font-semibold text-center">Contact Me</h1>
-                <p className="text-white font-openSans">Let us Create Fabulous Things Together!</p>
-            </div>
-            <div className="h-4/5 my-5 w-full">
-                <div className="max-w-lg mx-auto p-6 shadow-lg rounded-lg">
-                    <form action="#" method="POST">
-                        <div className="mb-4">
-                        <label htmlFor="fullName" className="block text-sm font-medium text-white">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" className="text-white mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required/>
-                        </div>
-                        
-                        <div className="mb-4">
-                        <label htmlFor="email" className="block text-sm font-medium text-white">Email Address</label>
-                        <input type="email" id="email" name="email" className="text-white mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required/>
-                        </div>
-                        
-                        <div className="mb-4">
-                        <label htmlFor="subject" className="block text-sm font-medium text-white">Subject</label>
-                        <input type="text" id="subject" name="subject" className="text-white mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required/>
-                        </div>
-                        
-                        <div className="mb-4">
-                        <label htmlFor="message" className="block text-sm font-medium text-white">Leave a Message</label>
-                        <textarea id="message" name="message" className="text-white mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
-                        </div>
-                        
-                        <div>
-                        <button type="submit" className="w-full bg-indigo-600 text-white p-3 rounded-md font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Kirim</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div></div>
-        </section>
+        <section id="contactme" className="flex flex-row text-white justify-center items-center pt-7 lg:h-screen mt-15">
+      {/* Konten Utama */}
+      <div className='w-8/10 bg-[#1B0926] my-18 py-18 rounded-lg text-center border-[#472C57] border-2 flex flex-col justify-center items-center'>
+        {/* <TypeAnimation
+          sequence={[
+            'Software Engineer', 200,
+            `Full Stack Web Developer`, 200,
+            'AI Engineer', 200
+          ]}
+          wrapper='p'
+          speed={12}
+          // style={{ fontFamily: `var(--font-openSans)`, fontSize: '1.25rem', color: 'black'}}
+          className='font-openSans md:text-md text-white'
+          repeat={Infinity}
+        /> */}
+        <h1 className='font-poppins mt-6 md:text-4xl mb-4 font-bold'>Thank You</h1>
+        <p className='font-openSans bg-gradient-to-r from-[#F12D78] to-[#8927FB] p-4 rounded-2xl mt-4'>for your attention</p>
+        <hr className="w-5/10 mt-8" />
+        <p className='font-openSans mt-2'>Get in touch with me</p>
+        <p className="font-openSans text-sm">email: ramandhasuryahadi@gmail.com</p>
+        <div className="flex flex-row justify-between items-center gap-18 p-2 mt-5">
+          <Link href="https://github.com/ramaGitScholar">
+            <span className="group inline-flex p-3 rounded-full border border-white hover:bg-white transition-all">
+              <SiGithub className="text-white group-hover:text-black w-6 h-6" />
+            </span>
+          </Link>
+          <Link href="https://www.instagram.com/ramandha_putras/">
+            <span className="inline-flex p-3 rounded-full border border-white hover:bg-gradient-to-t from-[#fb8f4d] to-[#7047c7] transition-all">
+              <SiInstagram className="w-6 h-6" />
+            </span>
+          </Link>
+          <Link href="https://www.linkedin.com/in/ramandhaps/">
+            <span className="inline-flex p-3 rounded-full border border-white hover:bg-[#0066c8] transition-all">
+              <SiLinkedin className="w-6 h-6" />
+            </span>
+          </Link>
+        </div>
+      </div>
+      
+    </section>
     )
 }

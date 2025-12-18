@@ -30,7 +30,7 @@ export default function ProjectShowcase() {
                 pagination={{ clickable: true }} // Activating paginations (The one with dots)
                 scrollbar={{ draggable: true }} // Enabling gesture of dragging to switch between contents
                 className="w-[90%] max-w-6xl"
-                loop={true} // Making the contents repeat
+                loop={true} // Making the contents do not repeat
                 
                 // Add coverflow effect parameters for panorama look
                 coverflowEffect={{
@@ -43,68 +43,101 @@ export default function ProjectShowcase() {
                 // Responsive breakpoints
                 breakpoints={{
                     320: {
-                        slidesPerView: 1,
-                        spaceBetween: 20,
+                        slidesPerView: 'auto',
+                        spaceBetween: 0,
                     },
                     640: {
-                        slidesPerView: 2,
-                        spaceBetween: 25,
+                        slidesPerView: 'auto',
+                        spaceBetween: 0,
                     },
                     768: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
+                        slidesPerView: 'auto',
+                        spaceBetween: 0,
                     },
                     1024: {
                         slidesPerView: 'auto',
-                        spaceBetween: 40,
+                        spaceBetween: 0,
                     },
                 }}
                 modules={[Pagination, Navigation, Scrollbar, EffectCoverflow]} // Added EffectCoverflow
             >
                 <SwiperSlide className="!w-auto">
-                    <Image 
-                        alt="slide 1" 
-                        src="/Aot wallpaper.jpg" 
-                        width={600} 
-                        height={300}
-                        className="rounded-lg object-cover w-full h-[300px]"
-                    />
+                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
+                        <a href="">
+                            <Image 
+                                alt="slide 1" 
+                                src="/projects/project1.jpg" 
+                                width={600} 
+                                height={300}
+                                className="object-cover w-full h-full"
+                            />
+                        </a>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide className="!w-auto">
-                    <Image 
-                        alt="slide 2" 
-                        src="/Aot wallpaper.jpg" 
-                        width={600} 
-                        height={300}
-                        className="rounded-lg object-cover w-full h-[300px]"
-                    />
+                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
+                        <a href="">
+                            <Image 
+                                alt="slide 2" 
+                                src="/projects/project2.jpg" 
+                                width={600} 
+                                height={300}
+                                className="object-cover w-full h-full"
+                            />
+                        </a>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide className="!w-auto">
-                    <Image 
-                        alt="slide 3" 
-                        src="/Aot wallpaper.jpg" 
-                        width={600} 
-                        height={300}
-                        className="rounded-lg object-cover w-full h-[300px]"
-                    />
+                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
+                        <a href="https://google.com">
+                            <Image 
+                                alt="slide 3" 
+                                src="/projects/project3.jpg" 
+                                width={600} 
+                                height={300}
+                                className="object-cover w-full h-full"
+                            />
+                        </a>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide className="!w-auto">
-                    <Image 
-                        alt="slide 4" 
-                        src="/Aot wallpaper.jpg" 
-                        width={600} 
-                        height={300}
-                        className="rounded-lg object-cover w-full h-[300px]"
-                    />
+                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
+                        <a href="">
+                            <Image 
+                                alt="slide 4" 
+                                src="/projects/project4.jpg" 
+                                width={600} 
+                                height={300}
+                                className="object-cover w-full h-full"
+                            />
+                        </a>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide className="!w-auto">
-                    <Image 
-                        alt="slide 5" 
-                        src="/Aot wallpaper.jpg" 
-                        width={600} 
-                        height={300}
-                        className="rounded-lg object-cover w-full h-[300px]"
-                    />
+                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
+                        <a href="">
+                            <Image 
+                                alt="slide 5" 
+                                src="/projects/project5.jpg" 
+                                width={600} 
+                                height={300}
+                                className="object-cover w-full h-full"
+                            />
+                        </a>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide className="!w-auto">
+                    <div className="w-64 h-36 md:w-80 md:h-44 lg:w-120 lg:h-76 overflow-hidden rounded-lg">
+                        <a href="https://github.com/ramaGitScholar?tab=repositories">
+                            <Image 
+                                alt="slide 5" 
+                                src="/projects/findoutmore.jpg" 
+                                width={600} 
+                                height={300}
+                                className="object-cover w-full h-full"
+                            />
+                        </a>
+                    </div>
                 </SwiperSlide>
             </Swiper>
         </div>

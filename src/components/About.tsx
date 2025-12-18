@@ -5,7 +5,7 @@ export default function About (){
     return(
         <section
             id="about"
-            className="relative flex justify-center items-center md:h-140"
+            className="relative flex justify-center items-center md:h-140 lg:h-screen mt-15" 
             >
             
             <div className="hidden md:block absolute left-0 inset-y-0 w-4/12 bg-[#EC2C7E] border-r-4 border-white z-0" />
@@ -30,7 +30,7 @@ export default function About (){
                     activities.
                 </p>
 
-                <a href="" className="self-center mt-16 w-12 hover:w-14 transition-all">
+                <a href="#about2" className="self-center mt-16 w-12 hover:w-14 transition-all">
                     <img src="/arrow-down.png" alt="" />
                 </a>
                 </div>
