@@ -5,23 +5,33 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 const poppins = Poppins({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 const openSans = Open_Sans({
-  weight: ['400', '600'],
-  subsets: ['latin'],
-  variable: '--font-open-sans',
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  variable: "--font-open-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Ramandha Putra Suryahadi - Portfolio",
-  description: 'Portfolio website showcasing web development and AI engineering projects by Ramandha Putra Suryahadi. Specialized in React, Next.js, Laravel, OpenCV and modern web technologies.',
-  keywords: ['web developer', 'AI engineer', 'portfolio', 'React', 'Next.js', 'Rama Scholar', 'Laravel, OpenCV'],
-  authors: [{ name: 'Ramandha Putra Suryahadi' }],
-  creator: 'Ramandha Putra Suryahadi',
+  title: "Ramandha Putra Suryahadi — Software & AI Engineer",
+  description:
+    "Portfolio of Ramandha Putra Suryahadi — a software engineer building full-stack web apps and AI / computer-vision solutions with React, Next.js, Laravel and OpenCV.",
+  keywords: [
+    "web developer",
+    "AI engineer",
+    "portfolio",
+    "React",
+    "Next.js",
+    "Rama Scholar",
+    "Laravel",
+    "OpenCV",
+  ],
+  authors: [{ name: "Ramandha Putra Suryahadi" }],
+  creator: "Ramandha Putra Suryahadi",
 };
 
 export default function RootLayout({
@@ -32,11 +42,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${openSans.variable} antialiased`}
+        className={`${poppins.variable} ${openSans.variable} antialiased bg-ink text-white`}
       >
-        <Nav/>
+        <Nav />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

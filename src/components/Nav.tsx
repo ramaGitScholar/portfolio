@@ -1,103 +1,153 @@
-// Declaring that the component runs on client side
-"use client"
+"use client";
 
-// Importing link for optimized link
 import Link from "next/link";
-import React from "react";
-import { SiGithub } from "react-icons/si";
-import { SiInstagram } from "react-icons/si";
-import { SiLinkedin } from "react-icons/si";
+import { useEffect, useState } from "react";
+import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
+import { HiMenu, HiX } from "react-icons/hi";
 
+const links = [
+  { label: "Home", href: "#hero", id: "hero" },
+  { label: "About", href: "#about", id: "about" },
+  { label: "Skills", href: "#skills", id: "skills" },
+  { label: "Projects", href: "#projects", id: "projects" },
+  { label: "Certifications", href: "#certifications", id: "certifications" },
+  { label: "Contact", href: "#contact", id: "contact" },
+];
 
+const socials = [
+  { icon: SiGithub, href: "https://github.com/ramaGitScholar", label: "GitHub" },
+  { icon: SiInstagram, href: "https://www.instagram.com/ramandha_putras/", label: "Instagram" },
+  { icon: SiLinkedin, href: "https://www.linkedin.com/in/ramandhaps/", label: "LinkedIn" },
+];
 
-// useState to store dynamic variable, useEffect to handle action based on values change
-import { useRef, useState, useEffect } from "react";
+export default function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("hero");
 
-export default function Nav (){
-    // show useState to handle whether nav will be visible or not
-    const [show, setShow] = useState(true);
-
-    // lastScroll used to compare with the previous scrolled pixels
-    const [lastScrollY, setLastScrollY] = useState(0);
-
-    const navRef = useRef<HTMLElement>(null);
-
-
-    // useEffect for handling scroll
-    useEffect(() => {
-        const handleScroll = () => {
-            // if current windows scroll is bigger (say 20 px) than the last one say we were in 10px then setShow would be false
-            if (window.scrollY > lastScrollY){
-                setShow(false);
-            } else {
-                setShow(true);
-            }
-            setLastScrollY(window.scrollY)
-        }
-
-        // event listener based on window scroll
-        window.addEventListener("scroll", handleScroll);
-
-        // always remove the listener at the end of use effect
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY])
-
-    useEffect(() => {
-    if (navRef.current) {
-      // take the height of the nav
-      const navHeight = navRef.current.offsetHeight;
-      // store in CSS variable
-      document.documentElement.style.setProperty(
-        "--navbar-height",
-        `${navHeight}px`
-      );
-    }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    links.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
-    return(
-            <nav ref={navRef}
-        className={`bg-[#13001E] backdrop-blur-lg px-16 py-5 z-50 fixed top-0 left-0 w-full shadow-md 
-            transition-all duration-500 ease-in-out text-white
-            ${show ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
-        `}
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled ? "py-2" : "py-4"
+      }`}
+    >
+      <nav
+        className={`container-px flex items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300 ${
+          scrolled ? "glass shadow-lg shadow-black/40" : "bg-transparent"
+        }`}
+      >
+        <Link href="#hero" className="flex items-center gap-2 font-poppins font-semibold">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-neon-pink to-neon-violet text-sm">
+            R
+          </span>
+          <span className="hidden sm:block">Ramandha</span>
+        </Link>
+
+        {/* Desktop links */}
+        <div className="hidden items-center gap-7 md:flex">
+          {links.map((l) => (
+            <Link
+              key={l.id}
+              href={l.href}
+              className={`group relative text-sm font-medium transition-colors ${
+                active === l.id ? "text-white" : "text-white/60 hover:text-white"
+              }`}
+            >
+              {l.label}
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-gradient-to-r from-neon-cyan to-neon-pink transition-all duration-300 ${
+                  active === l.id ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
+            </Link>
+          ))}
+        </div>
+
+        <div className="hidden items-center gap-3 md:flex">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={s.label}
+              className="text-white/70 transition-all hover:-translate-y-0.5 hover:text-neon-cyan"
+            >
+              <s.icon className="h-[18px] w-[18px]" />
+            </a>
+          ))}
+        </div>
+
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+          className="grid h-10 w-10 place-items-center rounded-lg glass md:hidden"
         >
-                <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between py-2">
-                    <Link href="/" className="flex items-center">
-                        <span className="text-white hover:text-white transition-colors duration-500 font-poppins font-semibold">
-                            Ramandha
-                        </span>
-                    </Link>
-                    <div className="hidden md:flex flex-row items-center gap-4">
-                        <div className="flex space-x-8 items-center">
-                            <Link href="#hero" className="group text-white transition-colors duration-500 font-openSans">
-                                Home
-                                <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
-                            </Link>
-                            <Link href="#about" className="group text-white transition-colors duration-500 font-openSans">
-                                About
-                                <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
-                            </Link>
-                            <Link href="#projects" className="group text-white transition-colors duration-500 font-openSans">
-                                Projects
-                                <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
-                            </Link>
-                            <Link href="#certifications" className="group text-white transition-colors duration-500 font-openSans">
-                                Certifications
-                                <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
-                            </Link>
-                            <Link href="#contactme" className="group text-white transition-colors duration-500 font-openSans">
-                                Contact
-                                <span className="block max-w-0 bg-white group-hover:max-w-full transition-all duration-500 h-0.5"></span>
-                            </Link>
-                        </div>
-                        <div className="hidden lg:flex flex-row justify-between items-center gap-5 border-black rounded-4xl p-2 border-2">
-                                <Link href="https://github.com/ramaGitScholar"><SiGithub className="scale-125 hover:scale-150 transition-all"/></Link>
-                                <Link href="https://www.instagram.com/ramandha_putras/"><SiInstagram className="scale-125 hover:scale-150 transition-all"/></Link>
-                                <Link href="https://www.linkedin.com/in/ramandhaps/"><SiLinkedin className="scale-125 hover:scale-150 transition-all"/></Link>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-    )
+          {open ? <HiX className="h-5 w-5" /> : <HiMenu className="h-5 w-5" />}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      <div
+        className={`container-px overflow-hidden transition-all duration-300 md:hidden ${
+          open ? "mt-2 max-h-[26rem] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="glass flex flex-col gap-1 rounded-2xl p-3">
+          {links.map((l) => (
+            <Link
+              key={l.id}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className={`rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
+                active === l.id
+                  ? "bg-white/10 text-white"
+                  : "text-white/70 hover:bg-white/5 hover:text-white"
+              }`}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <div className="mt-2 flex items-center gap-4 border-t border-white/10 px-4 pt-4">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
+                className="text-white/70 hover:text-neon-cyan"
+              >
+                <s.icon className="h-5 w-5" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </header>
+  );
 }

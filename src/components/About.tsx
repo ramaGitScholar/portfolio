@@ -1,37 +1,72 @@
-import Skills from "./Skills"
-import Image from "next/image"
+import Image from "next/image";
+import { HiCode, HiSparkles, HiUserGroup } from "react-icons/hi";
 
-export default function About (){
-    return(
-        <section
-            id="about"
-            className="relative flex justify-center items-center md:h-140 lg:h-screen mt-15" 
-            >
-            
-            <div className="hidden md:block absolute left-0 inset-y-0 w-4/12 bg-[#EC2C7E] border-r-4 border-white z-0" />
+const pillars = [
+  {
+    icon: HiCode,
+    title: "Full-Stack Web",
+    body: "Interactive UI/UX and reliable backends across personal, team, and professional projects — React, Next.js, Laravel.",
+  },
+  {
+    icon: HiSparkles,
+    title: "AI & Computer Vision",
+    body: "Expanding into machine learning, with a focus on computer vision using Python, OpenCV, TensorFlow and scikit-learn.",
+  },
+  {
+    icon: HiUserGroup,
+    title: "Collaboration",
+    body: "Strong teamwork built through organizations and volunteer work — communicating clearly and shipping together.",
+  },
+];
 
-            
-            <div className="relative text-center flex flex-row items-end px-16 gap-6 z-30 self-end">
-                <img
-                className="w-2/5 self-end hidden md:block"
-                src="/selfie.png"
-                alt="selfie"
-                />
-
-                <div className="text-center flex flex-col mb-6">
-                <h1 className="text-white text-sm md:text-2xl font-poppins font-semibold">
-                    Hello, you can call me Rama
-                </h1>
-
-                <p className="text-white text-sm md:text-md font-openSans border-[#472C57] border-2 rounded-xl p-14 mt-6">
-                    I am a software engineer with the ability to build a wide range of digital solutions, from web development to machine learning, while maintaining strong collaboration skills through involvement in various organizations and volunteer activities.
-                </p>
-
-                <a href="#about2" className="self-center mt-16 w-12 hover:w-14 transition-all">
-                    <img src="/arrow-down.png" alt="" />
-                </a>
-                </div>
+export default function About() {
+  return (
+    <section id="about" className="scroll-mt-24 py-24">
+      <div className="container-px">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+          {/* Portrait */}
+          <div className="relative mx-auto w-full max-w-xs lg:max-w-sm">
+            <div className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-neon-pink/30 to-neon-violet/20 blur-2xl" />
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-surface/60">
+              <Image
+                src="/profile-picture.png"
+                alt="Ramandha Putra Suryahadi"
+                width={640}
+                height={640}
+                className="h-auto w-full object-cover"
+              />
             </div>
-        </section>
-    )
+          </div>
+
+          {/* Copy */}
+          <div>
+            <span className="section-eyebrow">About</span>
+            <h2 className="section-title">
+              Hello, you can call me <span className="neon-text">Rama</span>
+            </h2>
+            <p className="mt-5 max-w-2xl text-white/60">
+              I&apos;m a software engineer who enjoys building a wide range of
+              digital solutions — from full-stack web development to machine
+              learning. I care about clean, usable products and about the people
+              I build them with.
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {pillars.map((p) => (
+                <div key={p.title} className="card p-5">
+                  <div className="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-neon-pink/20 to-neon-violet/20 text-neon-cyan">
+                    <p.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-poppins font-semibold text-white">
+                    {p.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-white/55">{p.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

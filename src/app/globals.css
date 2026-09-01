@@ -1,79 +1,208 @@
 @import "tailwindcss";
 
-html{
-  scroll-behavior: smooth;
-}
+/* ------------------------------------------------------------------ */
+/*  Design tokens                                                      */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-ink: #08010f;
+  --color-ink-soft: #0f0219;
+  --color-surface: #160726;
+  --color-surface-2: #1e0a33;
+  --color-line: #35204a;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --color-neon-cyan: #22d3ee;
+  --color-neon-pink: #f12d78;
+  --color-neon-violet: #8927fb;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-poppins: var(--font-poppins);
   --font-openSans: var(--font-open-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ------------------------------------------------------------------ */
+/*  Base                                                               */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: #ffffff;
+  font-family: var(--font-openSans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-neon-pink);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-neon-violet), var(--color-neon-pink));
+  border-radius: 999px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Components / utilities                                             */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-6xl px-6 md:px-10;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .neon-text {
+    background: linear-gradient(
+      100deg,
+      var(--color-neon-cyan),
+      var(--color-neon-pink) 55%,
+      var(--color-neon-violet)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .neon-ring {
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.35),
+      0 0 24px -4px rgba(241, 45, 120, 0.55),
+      inset 0 0 24px -12px rgba(137, 39, 251, 0.6);
+  }
+
+  .neon-btn {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300;
+    background: linear-gradient(100deg, var(--color-neon-pink), var(--color-neon-violet));
+    box-shadow: 0 8px 30px -8px rgba(241, 45, 120, 0.7);
+  }
+  .neon-btn:hover {
+    box-shadow:
+      0 0 20px -2px rgba(34, 211, 238, 0.6),
+      0 0 40px -6px rgba(241, 45, 120, 0.7);
+    transform: translateY(-2px);
+  }
+
+  .ghost-btn {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white/90 transition-all duration-300;
+  }
+  .ghost-btn:hover {
+    @apply border-white/40 text-white;
+    box-shadow: 0 0 18px -4px rgba(34, 211, 238, 0.5);
+  }
+
+  .section-eyebrow {
+    @apply mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon-cyan;
+  }
+
+  .section-title {
+    @apply font-poppins text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl;
+  }
+
+  .card {
+    @apply relative overflow-hidden rounded-2xl border border-white/10 bg-surface/60 backdrop-blur-md transition-all duration-300;
+  }
+  .card:hover {
+    @apply border-neon-cyan/40;
+    box-shadow: 0 0 30px -10px rgba(34, 211, 238, 0.45);
+    transform: translateY(-4px);
   }
 }
 
 @layer utilities {
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  .animate-scroll {
-    animation: scroll 20s linear infinite;
+  /* Dotted / grid background */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(137, 39, 251, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(137, 39, 251, 0.08) 1px, transparent 1px);
+    background-size: 46px 46px;
   }
 
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
   .hide-scrollbar {
-    -ms-overflow-style: none; /* IE & Edge */
-    scrollbar-width: none;    /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-scroll {
+    animation: scroll 28s linear infinite;
+  }
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+  .animate-floaty {
+    animation: floaty 6s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+  .animate-glow {
+    animation: glowPulse 5s ease-in-out infinite;
+  }
+
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+  .animate-bob {
+    animation: bob 1.8s ease-in-out infinite;
   }
 }
-
-.swiper-slide-active {
-  border: 2px solid transparent;
-  border-image: linear-gradient(45deg, aqua, deeppink, violet) 1;
-  border-image-slice: 1;
-  transition: border-image 2s ease, box-shadow 2s ease;
-}
-
-.swiper-slide-active:hover {
-  box-shadow: 0 0 15px aqua, 0 0 25px deeppink, 0 0 35px violet;
-}
-
-@keyframes neonPulse {
-  0%, 100% {
-    box-shadow: 0 0 10px aqua, 0 0 20px deeppink;
-  }
-  50% {
-    box-shadow: 0 0 20px deeppink, 0 0 40px violet;
-  }
-}
-
-.swiper-slide-active:hover {
-  animation: neonPulse 2s infinite alternate;
-}
-
-
-/* body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
