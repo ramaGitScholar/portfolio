@@ -6,8 +6,8 @@ import {
   SiMysql,
   SiTailwindcss,
   SiScikitlearn,
-  SiTensorflow,
-  SiOpencv,
+  SiOllama,
+  SiGooglegemini,
   SiNextdotjs,
   SiJavascript,
 } from "react-icons/si";
@@ -26,8 +26,9 @@ const stacks: Stack[] = [
   { icon: SiMysql, name: "MySQL", color: "#00758F" },
   { icon: FaPython, name: "Python", color: "#FFD43B" },
   { icon: SiScikitlearn, name: "scikit-learn", color: "#F09437" },
-  { icon: SiTensorflow, name: "TensorFlow", color: "#FF6F00" },
-  { icon: SiOpencv, name: "OpenCV", color: "#5C3EE8" },
+  { icon: SiOllama, name: "Ollama", color: "#ffffff" },
+  { icon: SiGooglegemini, name: "Google Gemini", color: "#078EFA" },
+  { icon: SiOllama, name: "Ollama", color: "#F09437" },
   { icon: FaGitAlt, name: "Git", color: "#F05032" },
 ];
 

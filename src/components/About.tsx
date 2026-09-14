@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HiCode, HiSparkles, HiUserGroup } from "react-icons/hi";
+import { HiCode, HiFire, HiSparkles, HiUserGroup } from "react-icons/hi";
 
 const pillars = [
   {
@@ -9,13 +9,18 @@ const pillars = [
   },
   {
     icon: HiSparkles,
-    title: "AI & Computer Vision",
-    body: "Expanding into machine learning, with a focus on computer vision using Python, OpenCV, TensorFlow and scikit-learn.",
+    title: "Machine Learning & AI",
+    body: "Expanding into machine learning & AI with a focus on Natural Language Processing and LLM integration",
   },
   {
     icon: HiUserGroup,
     title: "Collaboration",
     body: "Strong teamwork built through organizations and volunteer work — communicating clearly and shipping together.",
+  },
+  {
+    icon: HiFire,
+    title: "Continuous Learning",
+    body: "Driven by curiosity to continuously expand skillsets and adapt to new technological frontiers.",
   },
 ];
 
@@ -45,10 +50,10 @@ export default function About() {
               Hello, you can call me <span className="neon-text">Rama</span>
             </h2>
             <p className="mt-5 max-w-2xl text-white/60">
-              I&apos;m a software engineer who enjoys building a wide range of
-              digital solutions — from full-stack web development to machine
-              learning. I care about clean, usable products and about the people
-              I build them with.
+              I&apos;m a software engineer who loves turning complex ideas into 
+              reality—specializing in full-stack web apps and AI integration. 
+              My approach is simple: build clean, usable, and well-documented 
+              products that make future development a breeze.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">

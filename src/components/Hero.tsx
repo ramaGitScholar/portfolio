@@ -38,7 +38,7 @@ export default function Hero() {
                 1600,
                 "Full-Stack Web Developer",
                 1600,
-                "AI / Computer Vision Engineer",
+                "AI / Machine Learning Engineer",
                 1600,
               ]}
               wrapper="span"
@@ -49,9 +49,8 @@ export default function Hero() {
           </div>
 
           <p className="mx-auto mt-6 max-w-xl text-white/60 lg:mx-0">
-            I build reliable full-stack web applications and explore AI &
-            computer-vision solutions — turning ideas into polished, usable
-            products.
+            Building reliable full-stack web applications with AI/ML integration —
+            turning ideas into polished, usable AI-powered products.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
@@ -84,7 +83,7 @@ export default function Hero() {
           <div className="absolute inset-0 -z-10 animate-glow rounded-full bg-gradient-to-tr from-neon-violet/40 via-neon-pink/30 to-neon-cyan/30 blur-3xl" />
           <div className="animate-floaty overflow-hidden rounded-[2rem] border border-white/10 bg-surface/50 neon-ring backdrop-blur-sm">
             <Image
-              src="/selfie.png"
+              src="/formal-bgremoved.png"
               alt="Ramandha Putra Suryahadi"
               width={605}
               height={698}

@@ -69,7 +69,7 @@ export default function Projects() {
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <span className="section-eyebrow">Work</span>
-            <h2 className="section-title">Selected Projects</h2>
+            <h2 className="section-title">Highlighted Projects</h2>
           </div>
           <a
             href="https://github.com/ramaGitScholar"
