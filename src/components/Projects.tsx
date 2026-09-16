@@ -29,6 +29,15 @@ const projects: Project[] = [
     tags: ["Web App", "Backend"],
   },
   {
+    title: "E-commerce & Social Media Crawler",
+    description:
+      "Big data crawler from multiple sources such as Youtube, Tokopedia, and others for sentiment analysis related to government's policies.",
+    image: "/projects/project6.png",
+    link: "#projects",
+    tags: ["Selenium", "Playwright", "Python"],
+    featured: true,
+  },
+  {
     title: "Color Detection with OpenCV",
     description:
       "Real-time color detection and tracking from a live camera feed.",
@@ -59,6 +68,7 @@ const projects: Project[] = [
     image: "/projects/findoutmore.jpg",
     link: "https://github.com/ramaGitScholar",
     tags: ["Open Source"],
+    featured: true
   },
 ];
 
