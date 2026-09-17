@@ -18,7 +18,7 @@ const projects: Project[] = [
     image: "/projects/project1.jpg",
     link: "https://github.com/ramaGitScholar/laravel-sineflix",
     tags: ["Laravel", "MySQL", "Blade"],
-    col: "2",
+    col: "1",
   },
   {
     title: "Airline Ticket Reservation",
@@ -27,7 +27,7 @@ const projects: Project[] = [
     image: "/projects/project2.jpg",
     link: "https://github.com/ramaGitScholar/airline-ticket-reservation",
     tags: ["Web App", "Backend"],
-    col: "1"
+    col: "2"
   },
   {
     title: "E-commerce & Social Media Crawler",
