@@ -4,32 +4,21 @@ import { useState } from "react";
 import Image from "next/image";
 import { HiArrowUpRight } from "react-icons/hi2";
 
-type Cert = { id: number; title: string; type: "web" | "machine learning"; path: string };
+type Cert = { id: number; title: string; type: "web" | "artificial intelligence" | "data science"; path: string };
 
 const cards: Cert[] = [
-  { id: 1, title: "Introduction to Web Development with HTML, CSS, JavaScript", type: "web", path: "webintro.jpg" },
-  { id: 2, title: "Developing Responsive Web Pages Using HTML5 and CSS3", type: "web", path: "responsiveweb.jpg" },
-  { id: 3, title: "Advanced React", type: "web", path: "advancedreact.jpg" },
-  { id: 4, title: "React Native", type: "web", path: "reactnative.jpg" },
-  { id: 5, title: "React Basics", type: "web", path: "reactbasic.jpg" },
-  { id: 6, title: "Mobile Development and JavaScript", type: "web", path: "mobiledev.jpg" },
-  { id: 7, title: "Introduction to Mobile Development", type: "web", path: "mobiledev2.jpg" },
-  { id: 8, title: "Memulai Pemrograman dengan Python", type: "machine learning", path: "pythonintro.jpg" },
-  { id: 9, title: "Belajar Dasar AI", type: "machine learning", path: "aifund.jpg" },
-  { id: 10, title: "Practical Machine Learning", type: "machine learning", path: "practicalml.jpg" },
-  { id: 11, title: "Introduction to Machine Learning", type: "machine learning", path: "mlintro.jpg" },
-  { id: 12, title: "Scikit-Learn for Machine Learning Classification Problems", type: "machine learning", path: "scikitlearn.jpg" },
-  { id: 13, title: "Artificial Intelligence Essentials V2", type: "machine learning", path: "aiessentials.jpg" },
-  { id: 14, title: "Machine Learning with Python (V2)", type: "machine learning", path: "mlwpython.jpg" },
-  { id: 15, title: "Python Project for Data Science", type: "machine learning", path: "pythonds.jpg" },
-  { id: 16, title: "Python Project for Data Engineering", type: "machine learning", path: "pythonde.jpg" },
-  { id: 17, title: "Foundations for Big Data Analysis with SQL", type: "machine learning", path: "bigdatafound.jpg" },
-  { id: 18, title: "A Crash Course in Data Science", type: "machine learning", path: "ds.jpg" },
-  { id: 19, title: "The Data Scientist’s Toolbox", type: "machine learning", path: "dstoolbox.jpg" },
-  { id: 20, title: "Data Science in Real Life", type: "machine learning", path: "dsrl.jpg" },
+  { id: 1, title: "Advanced React", type: "web", path: "web1.jpg" },
+  { id: 2, title: "React Basics", type: "web", path: "web2.jpg" },
+  { id: 3, title: "Developed Responsive Web Pages Using HTML5 and CSS3", type: "web", path: "web3.jpg" },
+  { id: 4, title: "Artificial Intelligence Essentials V2", type: "artificial intelligence", path: "ai1.jpg" },
+  { id: 5, title: "Practical Machine Learning", type: "artificial intelligence", path: "ai2.jpg" },
+  { id: 6, title: "Scikit-Learn for Machine Learning Classification Problems", type: "artificial intelligence", path: "ai3.jpg" },
+  { id: 7, title: "Python Project for Data Science", type: "data science", path: "ds1.jpg" },
+  { id: 8, title: "Data Science in Real Life", type: "data science", path: "ds2.jpg" },
+  { id: 9, title: "The Data Scientist's Toolbox", type: "data science", path: "ds3.jpg" },
 ];
 
-const filters = ["all", "web", "machine learning"] as const;
+const filters = ["all", "web", "artificial intelligence", "data science"] as const;
 
 export default function Certifications() {
   const [selected, setSelected] = useState<(typeof filters)[number]>("all");
@@ -44,7 +33,7 @@ export default function Certifications() {
           <span className="section-eyebrow">Learning</span>
           <h2 className="section-title">Certifications</h2>
           <p className="mx-auto mt-4 max-w-xl text-white/60">
-            {cards.length}+ completed courses across web development and machine
+            Highlighted completed courses across web development and machine
             learning.
           </p>
         </div>

@@ -1,0 +1,19 @@
+MIT License (Code) + All Rights Reserved (Content)
+
+Copyright (c) 2026 Ramandha Putra Suryahadi
+
+This repository contains two distinct kinds of material, licensed differently:
+
+1. SOURCE CODE 
+Applies to: all files that are code or configuration (e.g. .ts, .tsx, .js, .css, config files, and similar), excluding anything listed under "PERSONAL CONTENT" below.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following condition:
+
+The above copyright notice — crediting Ramandha Putra Suryahadi as the original author — must be retained in all copies or substantial portions of the Software, including in derivative or redistributed versions.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+2. PERSONAL CONTENT
+Applies to: photos, images, the resume/experience/certification data, personal branding (name, logo, profile picture), written copy, and any other identifying or biographical content included in this repository (e.g. everything under public/, and the text content within components).
+
+All rights reserved. This content may not be copied, redistributed, or reused without express written permission from Ramandha Putra Suryahadi.

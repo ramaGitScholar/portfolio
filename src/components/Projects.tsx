@@ -7,7 +7,7 @@ type Project = {
   image: string;
   link: string;
   tags: string[];
-  featured?: boolean;
+  col?: string;
 };
 
 const projects: Project[] = [
@@ -18,7 +18,7 @@ const projects: Project[] = [
     image: "/projects/project1.jpg",
     link: "https://github.com/ramaGitScholar/laravel-sineflix",
     tags: ["Laravel", "MySQL", "Blade"],
-    featured: true,
+    col: "2",
   },
   {
     title: "Airline Ticket Reservation",
@@ -27,6 +27,7 @@ const projects: Project[] = [
     image: "/projects/project2.jpg",
     link: "https://github.com/ramaGitScholar/airline-ticket-reservation",
     tags: ["Web App", "Backend"],
+    col: "1"
   },
   {
     title: "E-commerce & Social Media Crawler",
@@ -35,7 +36,7 @@ const projects: Project[] = [
     image: "/projects/project6.png",
     link: "#projects",
     tags: ["Selenium", "Playwright", "Python"],
-    featured: true,
+    col: "2"
   },
   {
     title: "Color Detection with OpenCV",
@@ -44,6 +45,7 @@ const projects: Project[] = [
     image: "/projects/project3.jpg",
     link: "#projects",
     tags: ["Python", "OpenCV", "Computer Vision"],
+    col: "1"
   },
   {
     title: "Qolbu App",
@@ -52,23 +54,24 @@ const projects: Project[] = [
     image: "/projects/project4.jpg",
     link: "https://github.com/ramaGitScholar/qolbuapp",
     tags: ["Full-Stack", "Dashboard"],
+    col: "1"
   },
   {
-    title: "Tegalmanggung Village",
+    title: "Telegram Agentic AI English Mentor",
     description:
-      "A village profile website showcasing Tegalmanggung — from its natural waterfall to its livestock.",
-    image: "/projects/project5.jpg",
-    link: "https://github.com/ramaGitScholar/backend_digimon",
-    tags: ["Next.js", "Backend", "CMS"],
-    featured: true,
+      "A Telegram-based English mentor powered by an Agentic AI architecture. Utilizing Gemini 3.1 Flash, it features multiple specialized AI agents working together to help users master writing, reading, listening, and even speaking in a fun way.",
+    image: "/projects/project5.png",
+    link: "https://github.com/ramaGitScholar/mentor_bahasa_inggris_virtual",
+    tags: ["Python", "LLM", "Agentic AI", "Google AI Studio"],
+    col: "2"
   },
   {
     title: "More on GitHub",
     description: "Browse the rest of my experiments and open-source work.",
-    image: "/projects/findoutmore.jpg",
+    image: "/projects/findoutmore.png",
     link: "https://github.com/ramaGitScholar",
     tags: ["Open Source"],
-    featured: true
+    col: "3"
   },
 ];
 
@@ -99,7 +102,12 @@ export default function Projects() {
               target={p.link.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
               className={`card group flex flex-col ${
-                p.featured ? "lg:col-span-2" : ""
+                p.col == "1" ? "lg:col-span-1" : ""
+              } ${
+                p.col == "2" ? "lg:col-span-2" : ""
+              }
+              ${
+                p.col == "3" ? "lg:col-span-3" : ""
               }`}
             >
               <div className="relative aspect-[16/10] overflow-hidden">

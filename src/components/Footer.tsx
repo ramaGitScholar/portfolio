@@ -3,6 +3,7 @@ import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
 
 const links = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
@@ -52,8 +53,18 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 text-center text-xs text-white/40">
-          © {new Date().getFullYear()} Ramandha Putra Suryahadi. All rights
-          reserved. All trademarks and logos belong to their respective owners.
+          © {new Date().getFullYear()} Ramandha Putra Suryahadi. Personal
+          content (photos, resume, and branding) — all rights reserved. Source
+          code is{" "}
+          <a
+            href="https://github.com/ramaGitScholar/portfolio/blob/main/LICENSE"
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-dotted hover:text-white"
+          >
+            licensed under MIT with attribution
+          </a>
+          .
         </div>
       </div>
     </footer>

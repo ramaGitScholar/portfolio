@@ -28,7 +28,6 @@ const stacks: Stack[] = [
   { icon: SiScikitlearn, name: "scikit-learn", color: "#F09437" },
   { icon: SiOllama, name: "Ollama", color: "#ffffff" },
   { icon: SiGooglegemini, name: "Google Gemini", color: "#078EFA" },
-  { icon: SiOllama, name: "Ollama", color: "#F09437" },
   { icon: FaGitAlt, name: "Git", color: "#F05032" },
 ];
 
